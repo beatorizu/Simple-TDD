@@ -1,3 +1,5 @@
+from contexts import catch, set_trace
+from pytest import raises
 from unittest import TestCase
 from calculator.calculator import Calculator
 
@@ -41,3 +43,19 @@ class DivNumTest(TestCase):
     def test_can_div_number_by_zero(self):
         self.assertRaises(ZeroDivisionError,
                           lambda: self.calc.div(self.valueA, self.valueC))
+
+
+class WhenDivideByZero:
+    # Arrenge
+    def given_the_numbers(self):
+        self.valueA = 6
+        self.valueB = 0
+        self.calc = Calculator()
+
+    # Act
+    def when_we_make_a_division_by_zero(self):
+        self.response = lambda: self.calc.div(self.valueA, self.valueB)
+
+    # Assert
+    def then_we_get_a_exception(self):
+        raises(ZeroDivisionError, self.response)

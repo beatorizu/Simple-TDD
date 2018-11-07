@@ -4,8 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [dev-packages]
+colorama = "==0.4.0"
+coverage = "==4.5.1"
+ipdb = "==0.11"
+pytest = "==3.10.0"
+requests = "==2.20.0"
+Contexts = "==0.12"
 
 [packages]
+requests = "==2.20.0"
 
 [requires]
 python_version = "3.6"
