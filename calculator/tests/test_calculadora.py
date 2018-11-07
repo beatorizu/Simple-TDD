@@ -1,5 +1,5 @@
 from unittest import TestCase
-from calculator import Calculator
+from calculator.calculator import Calculator
 
 
 class SumNumTest(TestCase):
